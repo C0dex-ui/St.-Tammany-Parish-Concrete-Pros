@@ -1,7 +1,7 @@
 MULTI-PAGE / MULTI-DOMAIN SITE – BROOKS CONTRACTOR BRANDS
 ========================================================
 
-ONE CODEBASE · SEPARATE PAGES · PRODUCTION SLUGS/DOMAINS
+ONE CODEBASE · TWO PAGES · PRODUCTION DOMAINS
 
 Production URLs
 ---------------
@@ -12,21 +12,16 @@ Production URLs
 2. New Orleans Concrete Pros
    https://new-orleans-concrete-pros.vercel.app/
    Source: new-orleans-concrete.html
-   (served at domain root via vercel.json host rewrite)
-
-3. New Orleans Fencing Pros
-   https://st-tammany-parish-concrete-pros.vercel.app/fencing
-   Source: fencing.html
-   (cleanUrls slug — no .html)
+   (homepage selected at build via scripts/select-home.js)
 
 Local files
 -----------
 - index.html
 - new-orleans-concrete.html
-- fencing.html
 - css/styles.css
 - js/main.js
-- vercel.json   ← host rewrites + cleanUrls + redirects
+- vercel.json
+- scripts/select-home.js
 
 Vercel setup (live)
 -------------------
@@ -38,9 +33,7 @@ Build: scripts/select-home.js copies the correct homepage into /public
 based on VERCEL_PROJECT_PRODUCTION_URL.
 
 Brand switcher uses absolute production URLs so companies always open
-on the correct domain/slug.
-
-Fencing slug: /fencing (cleanUrls) on either project host.
+on the correct domain.
 
 COLOR PALETTE (exact – do not change)
 - Primary Dark: #1A1A1A
