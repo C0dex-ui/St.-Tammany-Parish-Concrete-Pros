@@ -73,14 +73,10 @@ html {
   padding: 0.4rem 0;
 }
 
-/* ST page: other brand on the right */
-.brand-bar--end .brand-bar-inner {
+/* Sister brand always on the right */
+.brand-bar--end .brand-bar-inner,
+.brand-bar-inner {
   justify-content: flex-end;
-}
-
-/* NOLA page: other brand on the left */
-.brand-bar--start .brand-bar-inner {
-  justify-content: flex-start;
 }
 
 .brand-switch {
