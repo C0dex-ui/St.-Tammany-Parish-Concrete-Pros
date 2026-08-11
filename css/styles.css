@@ -457,27 +457,6 @@ p:last-child {
   color: var(--accent);
 }
 
-.phone-ring {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #3dce6e;
-  box-shadow: 0 0 0 0 rgba(61, 206, 110, 0.6);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(61, 206, 110, 0.55);
-  }
-  70% {
-    box-shadow: 0 0 0 8px rgba(61, 206, 110, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(61, 206, 110, 0);
-  }
-}
-
 .nav-toggle {
   width: 46px;
   height: 46px;
@@ -892,58 +871,6 @@ p:last-child {
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.75);
   margin: 0;
-}
-
-.hero-scroll {
-  position: absolute;
-  bottom: 2.25rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.45rem;
-  font-family: var(--display);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
-}
-
-.hero-scroll i {
-  width: 1px;
-  height: 36px;
-  background: linear-gradient(var(--accent), transparent);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-scroll i::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: -100%;
-  width: 100%;
-  height: 50%;
-  background: var(--white);
-  animation: scrollLine 1.6s ease-in-out infinite;
-}
-
-@keyframes scrollLine {
-  0% {
-    top: -50%;
-  }
-  100% {
-    top: 120%;
-  }
-}
-
-@media (min-width: 900px) {
-  .hero-scroll {
-    display: flex;
-  }
 }
 
 /* reveal base */
@@ -2103,8 +2030,6 @@ p:last-child {
   .reveal,
   .reveal-shot,
   .trust-track,
-  .phone-ring,
-  .hero-scroll i::after,
   .btn,
   .svc-face,
   .shot img,
