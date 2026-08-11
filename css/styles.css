@@ -56,7 +56,7 @@ html {
   scroll-padding-top: calc(var(--brand-bar-h) + var(--header-h) + 12px);
 }
 
-/* —— Multi-brand site switcher —— */
+/* —— Sister-brand switcher (only the other brand is shown) —— */
 .brand-bar {
   position: sticky;
   top: 0;
@@ -68,48 +68,40 @@ html {
 
 .brand-bar-inner {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.35rem 1rem;
   min-height: var(--brand-bar-h);
-  padding: 0.35rem 0;
+  padding: 0.4rem 0;
 }
 
-.brand-bar-label {
-  font-family: var(--display);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
+/* ST page: other brand on the right */
+.brand-bar--end .brand-bar-inner {
+  justify-content: flex-end;
 }
 
-.brand-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 0.85rem;
+/* NOLA page: other brand on the left */
+.brand-bar--start .brand-bar-inner {
+  justify-content: flex-start;
 }
 
-.brand-links a {
+.brand-switch {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--display);
   font-size: 0.82rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
-  padding: 0.15rem 0;
-  border-bottom: 2px solid transparent;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  color: var(--ink);
+  background: var(--accent);
+  padding: 0.4rem 0.75rem;
+  line-height: 1.15;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+  max-width: min(100%, 22rem);
 }
 
-.brand-links a:hover {
+.brand-switch:hover {
+  background: var(--accent-deep);
   color: var(--white);
-}
-
-.brand-links a.is-active {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
 }
 
 .footer-sister {
@@ -2097,7 +2089,7 @@ body {
   touch-action: manipulation;
 }
 
-.brand-links a,
+.brand-switch,
 .nav-mobile a,
 .footer-cols nav a {
   touch-action: manipulation;
@@ -2125,25 +2117,13 @@ body {
   }
 
   .brand-bar-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-    padding: 0.45rem 0;
+    padding: 0.4rem 0;
   }
 
-  .brand-bar-label {
-    font-size: 0.65rem;
-  }
-
-  .brand-links {
-    width: 100%;
-    gap: 0.5rem 0.75rem;
-  }
-
-  .brand-links a {
+  .brand-switch {
     font-size: 0.72rem;
-    letter-spacing: 0.03em;
-    line-height: 1.25;
+    letter-spacing: 0.04em;
+    padding: 0.45rem 0.65rem;
     max-width: 100%;
   }
 
@@ -2490,7 +2470,7 @@ body {
     font-size: 1.95rem;
   }
 
-  .brand-links a {
+  .brand-switch {
     font-size: 0.68rem;
   }
 
