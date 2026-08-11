@@ -1,12 +1,17 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    St. Tammany Parish Concrete Pros — Design system
    Industrial craft · editorial layout · controlled depth
    Palette locked
    ========================================================================== */
 
 :root {
+  /* St. Tammany default palette */
   --ink: #1a1a1a;
+  --ink-rgb: 26, 26, 26;
+  --ink-deep: #121212;
+  --surface-dark: #0e0e0e;
   --accent: #ff5a1f;
+  --accent-rgb: 255, 90, 31;
   --accent-2: #ff7a45;
   --accent-deep: #d94812;
   --bg: #f7f7f5;
@@ -21,6 +26,23 @@
   --max: 1200px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* New Orleans Concrete Pros — Deep Slate / Strong Teal */
+body[data-brand="nola-concrete"] {
+  --ink: #1b263b;
+  --ink-rgb: 27, 38, 59;
+  --ink-deep: #141c2b;
+  --surface-dark: #101828;
+  --accent: #00a896;
+  --accent-rgb: 0, 168, 150;
+  --accent-2: #2ec4b6;
+  --accent-deep: #008f7f;
+  --bg: #f5f7fa;
+  --bg-2: #e4e9f0;
+  --mute: #4a5568;
+  --white: #ffffff;
+  --line: #cbd5e0;
 }
 
 *,
@@ -39,7 +61,7 @@ html {
   position: sticky;
   top: 0;
   z-index: 1001;
-  background: #0e0e0e;
+  background: var(--surface-dark);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   min-height: var(--brand-bar-h);
 }
@@ -102,7 +124,7 @@ html {
 }
 
 .footer-sister:hover {
-  color: var(--accent-2, #ff7a45);
+  color: var(--accent-2);
 }
 
 .logo-img-wide {
@@ -171,7 +193,7 @@ p:last-child {
   width: 0%;
   z-index: 10001;
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  box-shadow: 0 0 12px rgba(255, 90, 31, 0.55);
+  box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.55);
   pointer-events: none;
 }
 
@@ -369,7 +391,7 @@ p:last-child {
   position: sticky;
   top: var(--brand-bar-h);
   z-index: 1000;
-  background: rgba(26, 26, 26, 0.94);
+  background: rgba(var(--ink-rgb), 0.94);
   backdrop-filter: blur(12px) saturate(1.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -584,13 +606,13 @@ p:last-child {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 80% at 15% 50%, rgba(26, 26, 26, 0.55) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 80% at 15% 50%, rgba(var(--ink-rgb), 0.55) 0%, transparent 60%),
     linear-gradient(
       105deg,
-      rgba(26, 26, 26, 0.94) 0%,
-      rgba(26, 26, 26, 0.78) 42%,
-      rgba(26, 26, 26, 0.45) 72%,
-      rgba(26, 26, 26, 0.55) 100%
+      rgba(var(--ink-rgb), 0.94) 0%,
+      rgba(var(--ink-rgb), 0.78) 42%,
+      rgba(var(--ink-rgb), 0.45) 72%,
+      rgba(var(--ink-rgb), 0.55) 100%
     );
 }
 
@@ -702,7 +724,7 @@ p:last-child {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(26, 26, 26, 0.35);
+  background: rgba(var(--ink-rgb), 0.35);
   backdrop-filter: blur(8px);
   padding: 0.45rem 0.75rem;
   margin-bottom: 1.25rem;
@@ -817,8 +839,8 @@ p:last-child {
 }
 
 .stat-card:hover {
-  border-color: rgba(255, 90, 31, 0.55);
-  background: rgba(255, 90, 31, 0.1);
+  border-color: rgba(var(--accent-rgb), 0.55);
+  background: rgba(var(--accent-rgb), 0.1);
   transform: translateY(-3px);
 }
 
@@ -851,7 +873,7 @@ p:last-child {
 
 .hero-plate {
   border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(26, 26, 26, 0.45);
+  background: rgba(var(--ink-rgb), 0.45);
   backdrop-filter: blur(8px);
   padding: 1rem 1.1rem;
 }
@@ -995,7 +1017,7 @@ p:last-child {
   right: -6vw;
   bottom: -4vw;
   width: min(42vw, 420px);
-  color: rgba(26, 26, 26, 0.05);
+  color: rgba(var(--ink-rgb), 0.05);
   pointer-events: none;
 }
 
@@ -1031,7 +1053,7 @@ p:last-child {
   padding: 1.35rem 1.25rem 1.3rem;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 1px 0 rgba(26, 26, 26, 0.04);
+  box-shadow: 0 1px 0 rgba(var(--ink-rgb), 0.04);
   transition: border-color 0.25s ease, box-shadow 0.35s var(--ease),
     background 0.25s ease;
   position: relative;
@@ -1054,7 +1076,7 @@ p:last-child {
 .svc-card:hover .svc-face,
 .svc-card:focus-within .svc-face {
   border-color: var(--ink);
-  box-shadow: 8px 12px 0 rgba(26, 26, 26, 0.08);
+  box-shadow: 8px 12px 0 rgba(var(--ink-rgb), 0.08);
 }
 
 .svc-card:hover .svc-face::before,
@@ -1170,9 +1192,9 @@ p:last-child {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 85% 20%, rgba(255, 90, 31, 0.16), transparent 35%),
-    radial-gradient(circle at 10% 80%, rgba(255, 90, 31, 0.06), transparent 30%),
-    linear-gradient(180deg, #1a1a1a 0%, #121212 100%);
+    radial-gradient(circle at 85% 20%, rgba(var(--accent-rgb), 0.16), transparent 35%),
+    radial-gradient(circle at 10% 80%, rgba(var(--accent-rgb), 0.06), transparent 30%),
+    linear-gradient(180deg, var(--ink) 0%, var(--ink-deep) 100%);
   pointer-events: none;
 }
 
@@ -1190,7 +1212,7 @@ p:last-child {
 .process-board {
   position: relative;
   z-index: 1;
-  border: 1px solid rgba(255, 90, 31, 0.35);
+  border: 1px solid rgba(var(--accent-rgb), 0.35);
   background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(4px);
 }
@@ -1199,11 +1221,11 @@ p:last-child {
   display: grid;
   gap: 0.65rem 1.5rem;
   padding: 1.15rem 1.25rem 1.2rem;
-  border-bottom: 1px solid rgba(255, 90, 31, 0.35);
+  border-bottom: 1px solid rgba(var(--accent-rgb), 0.35);
   background: linear-gradient(
     90deg,
-    rgba(255, 90, 31, 0.12),
-    rgba(255, 90, 31, 0.03) 55%,
+    rgba(var(--accent-rgb), 0.12),
+    rgba(var(--accent-rgb), 0.03) 55%,
     transparent
   );
 }
@@ -1298,7 +1320,7 @@ p:last-child {
 
 .step-panel:hover,
 .step.is-in .step-panel:hover {
-  background: rgba(255, 90, 31, 0.08);
+  background: rgba(var(--accent-rgb), 0.08);
 }
 
 .step.is-in .step-panel {
@@ -1412,7 +1434,7 @@ p:last-child {
   background: linear-gradient(
     180deg,
     transparent 35%,
-    rgba(26, 26, 26, 0.85) 100%
+    rgba(var(--ink-rgb), 0.85) 100%
   );
   z-index: 1;
   opacity: 0.9;
@@ -1562,8 +1584,8 @@ p:last-child {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(26, 26, 26, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(26, 26, 26, 0.07) 1px, transparent 1px);
+    linear-gradient(rgba(var(--ink-rgb), 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--ink-rgb), 0.07) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
@@ -1573,14 +1595,14 @@ p:last-child {
   top: 48%;
   width: 55%;
   aspect-ratio: 1;
-  border: 1px dashed rgba(255, 90, 31, 0.45);
+  border: 1px dashed rgba(var(--accent-rgb), 0.45);
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
 
 .map-ring.r2 {
   width: 78%;
-  border-color: rgba(26, 26, 26, 0.12);
+  border-color: rgba(var(--ink-rgb), 0.12);
 }
 
 .map-core {
@@ -1671,7 +1693,7 @@ p:last-child {
   height: 55vw;
   right: -10vw;
   top: -15vw;
-  background: radial-gradient(circle, rgba(255, 90, 31, 0.22), transparent 65%);
+  background: radial-gradient(circle, rgba(var(--accent-rgb), 0.22), transparent 65%);
   pointer-events: none;
 }
 
@@ -1702,7 +1724,7 @@ p:last-child {
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: linear-gradient(
     135deg,
-    rgba(255, 90, 31, 0.12),
+    rgba(var(--accent-rgb), 0.12),
     rgba(255, 255, 255, 0.03)
   );
   position: relative;
@@ -1783,7 +1805,7 @@ p:last-child {
   background: var(--white);
   color: var(--ink);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 14px 14px 0 rgba(255, 90, 31, 0.85);
+  box-shadow: 14px 14px 0 rgba(var(--accent-rgb), 0.85);
   padding: 0 0 1.4rem;
   transform-style: preserve-3d;
 }
@@ -1918,7 +1940,7 @@ p:last-child {
 
 /* —— FOOTER —— */
 .site-footer {
-  background: #0e0e0e;
+  background: var(--surface-dark);
   color: rgba(255, 255, 255, 0.7);
 }
 
