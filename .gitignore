@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors / tooling
+.vscode/
+.idea/
+*.swp
+*.swo
+.grok/
+
+# Local previews / temp
+assets/logo-header-preview.jpg
+*.log
