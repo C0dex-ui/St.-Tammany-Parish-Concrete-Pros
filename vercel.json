@@ -1,28 +1,7 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "new-orleans-concrete-pros.vercel.app"
-        }
-      ],
-      "destination": "/new-orleans-concrete.html"
-    },
-    {
-      "source": "/index",
-      "has": [
-        {
-          "type": "host",
-          "value": "new-orleans-concrete-pros.vercel.app"
-        }
-      ],
-      "destination": "/new-orleans-concrete.html"
-    }
-  ],
+  "buildCommand": "node scripts/select-home.js",
   "redirects": [
     {
       "source": "/new-orleans-concrete",
@@ -48,5 +27,3 @@
     }
   ]
 }
-
-
