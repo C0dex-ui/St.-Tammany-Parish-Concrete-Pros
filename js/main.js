@@ -6,6 +6,8 @@
   "use strict";
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+  const isNarrow = () => window.innerWidth < 900;
 
   /* Year */
   const yearEl = document.getElementById("year");
@@ -61,7 +63,10 @@
   }
 
   function updateParallax() {
-    if (reduceMotion || !heroMedia) return;
+    if (reduceMotion || isCoarsePointer || isNarrow() || !heroMedia) {
+      if (heroMedia) heroMedia.style.transform = "";
+      return;
+    }
     const y = window.scrollY || 0;
     const hero = document.getElementById("hero");
     if (!hero) return;
@@ -95,13 +100,14 @@
     /* Process board stays compact — no scroll depth transforms */
   }
 
-  /* Pointer tilt on cards / form */
+  /* Pointer tilt on cards / form — desktop only */
   function initTilt(root) {
-    if (reduceMotion) return;
+    if (reduceMotion || isCoarsePointer || isNarrow()) return;
     const els = (root || document).querySelectorAll("[data-tilt]");
     els.forEach((el) => {
       const max = el.classList.contains("quote-form") ? 4 : 7;
       el.addEventListener("pointermove", (e) => {
+        if (e.pointerType === "touch") return;
         const r = el.getBoundingClientRect();
         const x = (e.clientX - r.left) / r.width;
         const y = (e.clientY - r.top) / r.height;

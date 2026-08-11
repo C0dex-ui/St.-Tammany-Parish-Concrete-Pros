@@ -35,7 +35,9 @@ based on VERCEL_PROJECT_PRODUCTION_URL.
 Brand switcher uses absolute production URLs so companies always open
 on the correct domain.
 
-COLOR PALETTE (exact – do not change)
+COLOR PALETTES
+--------------
+St. Tammany Parish Concrete Pros (default :root)
 - Primary Dark: #1A1A1A
 - Accent: #FF5A1F
 - Background Light: #F7F7F5
@@ -43,3 +45,12 @@ COLOR PALETTE (exact – do not change)
 - Text Secondary: #5A5A57
 - White: #FFFFFF
 - Border / Divider: #D1D1CD
+
+New Orleans Concrete Pros (body[data-brand="nola-concrete"])
+- Primary Dark (Deep Slate Blue): #1B263B
+- Accent (Strong Teal): #00A896
+- Background Light (Cool Soft White): #F5F7FA
+- Background Soft (Light Blue-Gray): #E4E9F0
+- Secondary Text (Cool Gray): #4A5568
+- White: #FFFFFF
+- Border / Divider (Soft Blue-Gray): #CBD5E0
