@@ -1,120 +1,51 @@
-HOMEPAGE PROMPT – ST. TAMMANY PARISH CONCRETE PROS
-==================================================
+MULTI-PAGE / MULTI-DOMAIN SITE – BROOKS CONTRACTOR BRANDS
+========================================================
 
-GOAL
-Create a high-converting, professional homepage for a concrete contracting company named **St. Tammany Parish Concrete Pros**.
-The page must be structured so it can easily be adapted for any concrete company (and also works as a template for “New Orleans Fencing Pros” by simply changing the company name and services).
+ONE CODEBASE · SEPARATE PAGES · PRODUCTION SLUGS/DOMAINS
 
-Use a clean, modern Industrial Material Design 3 style with controlled 3D scroll effects (subtle parallax on hero, light card lift/tilt on scroll, depth on process steps). Keep the design professional, trustworthy, and conversion-focused.
+Production URLs
+---------------
+1. St. Tammany Parish Concrete Pros
+   https://st-tammany-parish-concrete-pros.vercel.app/
+   Source: index.html
 
-INSPIRATION SITES – STRUCTURE & CONTENT
-- https://www.mandbconcrete.net/
-- https://www.eliteconcretecontractorsdallas.com/
-- https://concrete-contractoraustin.com/
-- https://austinconcretespecialists.com/
+2. New Orleans Concrete Pros
+   https://new-orleans-concrete-pros.vercel.app/
+   Source: new-orleans-concrete.html
+   (served at domain root via vercel.json host rewrite)
 
-INSPIRATION SITES – DESIGN, LAYOUT & ANIMATION
-- Dribbble, Mobbin, Behance, Awwwards, Godly, Collect UI, Refero, Land-book, Lapa Ninja, SiteInspire, Page Flows, One Page Love, Screenlane, Muzli
+3. New Orleans Fencing Pros
+   https://st-tammany-parish-concrete-pros.vercel.app/fencing
+   Source: fencing.html
+   (cleanUrls slug — no .html)
+
+Local files
+-----------
+- index.html
+- new-orleans-concrete.html
+- fencing.html
+- css/styles.css
+- js/main.js
+- vercel.json   ← host rewrites + cleanUrls + redirects
+
+Vercel setup
+------------
+Option A (recommended): two Vercel projects from the same repo
+  - Project name: st-tammany-parish-concrete-pros
+  - Project name: new-orleans-concrete-pros
+  Both deploy this folder; vercel.json host rewrite makes NOLA domain
+  serve new-orleans-concrete.html at /
+
+Option B: one project + custom domains (if not using second *.vercel.app)
+
+Brand switcher uses absolute production URLs so companies always open
+on the correct domain/slug.
 
 COLOR PALETTE (exact – do not change)
-- Primary Dark: #1A1A1A (Deep Charcoal)
-- Accent: #FF5A1F (Safety Orange)
+- Primary Dark: #1A1A1A
+- Accent: #FF5A1F
 - Background Light: #F7F7F5
 - Background Soft: #EDEDEA
 - Text Secondary: #5A5A57
 - White: #FFFFFF
 - Border / Divider: #D1D1CD
-
-COMPANY DETAILS
-- Name: St. Tammany Parish Concrete Pros
-- Location focus: St. Tammany Parish, Louisiana (serving surrounding Northshore and Greater New Orleans areas)
-- Tone: Professional, reliable, local, high-quality craftsmanship
-
-HOMEPAGE STRUCTURE (exact order)
-
-1. STICKY HEADER
-- Background: #1A1A1A
-- Logo: St. Tammany Parish Concrete Pros
-- Navigation: Services, Projects, Service Areas, About, Contact
-- Phone number: (985) 555-0199
-- Primary button: “Get Free Quote” in #FF5A1F
-
-2. HERO SECTION
-- Full-width background image of finished concrete work
-- Large bold headline: “Professional Concrete Work Done Right”
-- Subheadline: “Driveways, Patios, Foundations & More Across St. Tammany Parish”
-- Two buttons:
-  - Primary: Get Free Quote (#FF5A1F)
-  - Secondary: Call (985) 555-0199 (outlined white)
-- Small trust line: Locally Owned • Licensed & Insured • Serving St. Tammany Parish
-
-3. TRUST BAR
-Horizontal strip with key trust signals:
-- Licensed & Insured
-- 15+ Years Experience
-- 1,000+ Projects Completed
-- 1-Year Workmanship Warranty
-- Free On-Site Estimates
-
-4. SERVICES SECTION
-Heading: Our Concrete Services
-Display as clean cards (with subtle 3D lift on scroll):
-- Concrete Driveways
-- Patios & Outdoor Living
-- Sidewalks & Walkways
-- Concrete Foundations & Slabs
-- Stamped & Decorative Concrete
-- Pool Decks
-- Concrete Repair & Resurfacing
-- Commercial Concrete (Parking Lots, ADA Ramps, etc.)
-
-Button at bottom: “View All Services”
-
-5. WHY CHOOSE US / PROCESS SECTION
-Heading: Why Homeowners & Builders Choose Us
-Show 4 clear reasons or a simple 4-step process:
-1. Free On-Site Estimate
-2. Transparent Pricing
-3. Quality Materials & Expert Workmanship
-4. Clean Job Site & On-Time Completion
-
-6. PROJECTS / GALLERY SECTION
-Heading: Recent Concrete Projects
-Clean photo grid (3–4 columns).
-Button: “View Full Gallery”
-
-7. SERVICE AREAS SECTION
-Heading: Areas We Serve
-Text: Proudly serving St. Tammany Parish and the surrounding Northshore communities including Covington, Mandeville, Slidell, Madisonville, Abita Springs, Lacombe, Pearl River, and nearby areas.
-Include a simple map placeholder.
-Button: “See All Service Areas”
-
-8. QUOTE REQUEST FORM (VERY IMPORTANT)
-Heading: Request Your Free Concrete Quote
-Form fields (required):
-- Full Name
-- Phone Number
-- Email Address
-- Property Address (Street, City, State, ZIP)
-- Approximate Square Footage of Concrete Needed
-- Project Type (dropdown: Driveway, Patio, Sidewalk, Foundation, Pool Deck, Repair, Commercial, Other)
-- Project Description / Message
-- Submit button: “Get My Free Quote” (#FF5A1F)
-
-Also display the phone number large next to the form.
-
-9. FOOTER
-- Company name
-- Phone
-- Simple navigation links
-- Copyright
-
-ADDITIONAL RULES
-- Use the exact color palette provided above.
-- Keep content professional and generic enough for any concrete company.
-- Make the quote form the strongest conversion element.
-- Use controlled 3D scroll effects only (subtle and performant).
-- Mobile-first, fast, accessible, high contrast.
-- The structure should be easy to adapt later for “New Orleans Fencing Pros”.
-
-Build a clean, modern, high-converting homepage that feels trustworthy and local.

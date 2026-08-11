@@ -14,6 +14,7 @@
   --mute: #5a5a57;
   --white: #ffffff;
   --line: #d1d1cd;
+  --brand-bar-h: 36px;
   --header-h: 78px;
   --font: "Barlow", system-ui, sans-serif;
   --display: "Barlow Condensed", "Arial Narrow", sans-serif;
@@ -30,7 +31,83 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-h) + 12px);
+  scroll-padding-top: calc(var(--brand-bar-h) + var(--header-h) + 12px);
+}
+
+/* —— Multi-brand site switcher —— */
+.brand-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+  background: #0e0e0e;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: var(--brand-bar-h);
+}
+
+.brand-bar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem 1rem;
+  min-height: var(--brand-bar-h);
+  padding: 0.35rem 0;
+}
+
+.brand-bar-label {
+  font-family: var(--display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.brand-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.85rem;
+}
+
+.brand-links a {
+  font-family: var(--display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  padding: 0.15rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.brand-links a:hover {
+  color: var(--white);
+}
+
+.brand-links a.is-active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.footer-sister {
+  display: inline-block;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.footer-sister:hover {
+  color: var(--accent-2, #ff7a45);
+}
+
+.logo-img-wide {
+  height: 44px;
+  max-width: min(240px, 48vw);
 }
 
 body {
@@ -290,7 +367,7 @@ p:last-child {
 /* —— HEADER —— */
 .site-header {
   position: sticky;
-  top: 0;
+  top: var(--brand-bar-h);
   z-index: 1000;
   background: rgba(26, 26, 26, 0.94);
   backdrop-filter: blur(12px) saturate(1.2);

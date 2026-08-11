@@ -1,0 +1,52 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "new-orleans-concrete-pros.vercel.app"
+        }
+      ],
+      "destination": "/new-orleans-concrete.html"
+    },
+    {
+      "source": "/index",
+      "has": [
+        {
+          "type": "host",
+          "value": "new-orleans-concrete-pros.vercel.app"
+        }
+      ],
+      "destination": "/new-orleans-concrete.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/new-orleans-concrete",
+      "has": [
+        {
+          "type": "host",
+          "value": "st-tammany-parish-concrete-pros.vercel.app"
+        }
+      ],
+      "destination": "https://new-orleans-concrete-pros.vercel.app/",
+      "permanent": false
+    },
+    {
+      "source": "/new-orleans-concrete.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "st-tammany-parish-concrete-pros.vercel.app"
+        }
+      ],
+      "destination": "https://new-orleans-concrete-pros.vercel.app/",
+      "permanent": false
+    }
+  ]
+}
+
+
