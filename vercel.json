@@ -2,6 +2,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "buildCommand": "node scripts/select-home.js",
+  "outputDirectory": "public",
   "redirects": [
     {
       "source": "/new-orleans-concrete",

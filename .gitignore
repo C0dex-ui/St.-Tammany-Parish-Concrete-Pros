@@ -16,3 +16,6 @@ assets/logo-header-preview.jpg
 
 .vercel
 .env*
+
+public/
+
