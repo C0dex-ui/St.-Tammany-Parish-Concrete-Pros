@@ -28,18 +28,19 @@ Local files
 - js/main.js
 - vercel.json   ← host rewrites + cleanUrls + redirects
 
-Vercel setup
-------------
-Option A (recommended): two Vercel projects from the same repo
-  - Project name: st-tammany-parish-concrete-pros
-  - Project name: new-orleans-concrete-pros
-  Both deploy this folder; vercel.json host rewrite makes NOLA domain
-  serve new-orleans-concrete.html at /
+Vercel setup (live)
+-------------------
+Two Vercel projects, same GitHub repo:
+  - st-tammany-parish-concrete-pros  → https://st-tammany-parish-concrete-pros.vercel.app/
+  - new-orleans-concrete-pros        → https://new-orleans-concrete-pros.vercel.app/
 
-Option B: one project + custom domains (if not using second *.vercel.app)
+Build: scripts/select-home.js copies the correct homepage into /public
+based on VERCEL_PROJECT_PRODUCTION_URL.
 
 Brand switcher uses absolute production URLs so companies always open
 on the correct domain/slug.
+
+Fencing slug: /fencing (cleanUrls) on either project host.
 
 COLOR PALETTE (exact – do not change)
 - Primary Dark: #1A1A1A
